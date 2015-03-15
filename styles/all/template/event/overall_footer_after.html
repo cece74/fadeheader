@@ -1,0 +1,21 @@
+<script>
+$(document).ready(function(){
+	var imgArr = new Array( // path images
+		{SLIDE}
+		);
+		var preloadArr = new Array();
+		var i;
+		/* preload images*/
+		for(i=0; i < imgArr.length; i++){
+			preloadArr[i] = new Image();
+			preloadArr[i].src = imgArr[i];
+		}
+		var currImg = 1;
+		var intID = setInterval(changeImg, 10000); // image changes every: in milliseconds /
+		function changeImg(){
+			$('.headerbar').animate({opacity: 0}, 1, function(){
+				$(this).css('background','url(' + preloadArr[currImg++%preloadArr.length].src +')');
+			}).animate({opacity: 1}, 1000);
+		}
+	});
+</script>
