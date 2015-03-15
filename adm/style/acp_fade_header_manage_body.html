@@ -1,0 +1,51 @@
+<!-- INCLUDE overall_header.html -->
+<a name="maincontent"></a>
+
+<h1>{L_ACP_FADE_HEADER}</h1>
+<p>{L_ACP_FADE_HEADER_EXPLAIN}</p>
+
+<form id="list" method="post" action="{U_ACTION}">
+	<!-- IF .images -->
+	<fieldset class="tabulated">
+		<table class="table1 zebra-table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>{L_FILE_NAME}</th>
+				<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+		<!-- BEGIN images -->
+			<tr>
+				<td>{images.ID}</td>
+				<td>{images.FILE_NAME}</td>
+				<td class="actions">
+					<span class="up-disabled" style="display:none;">{ICON_MOVE_UP_DISABLED}</span>
+					<span class="up"><a href="{images.U_MOVE_UP}" data-ajax="row_up">{ICON_MOVE_UP}</a></span>
+					<span class="down-disabled" style="display:none;">{ICON_MOVE_DOWN_DISABLED}</span>
+					<span class="down"><a href="{images.U_MOVE_DOWN}" data-ajax="row_down">{ICON_MOVE_DOWN}</a></span>
+					<a href="{images.U_DELETE}">{ICON_DELETE}</a>
+				</td>
+			</tr>
+		<!-- END images -->
+		</tbody>
+		</table>
+	</fieldset>
+	<!-- ENDIF -->
+	{S_FORM_TOKEN}
+</form>
+<form action="{U_ACTION}" method="post" enctype="multipart/form-data">
+	<fieldset>
+	<!-- IF S_ERROR --><div class="errorbox"><p>{S_ERROR}</p></div><!-- ENDIF -->
+		<legend>{L_UPLOAD}</legend>
+		<dl>
+			<dt><label for="upload_file">{L_SELECT_FILE}:</label></dt>
+			<dd><input type="file" name="upload_file" id="upload_file" class="inputbox autowidth" /></dd>
+		</dl>
+	</fieldset>
+	<fieldset class="quick">
+		<input name="submit" value="{L_SUBMIT}" class="button1" type="submit">
+	</fieldset>
+</form>
+<!-- INCLUDE overall_footer.html -->
