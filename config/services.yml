@@ -1,0 +1,10 @@
+services:
+   sanfi.fadeheader.listener:
+        class: sanfi\fadeheader\event\listener
+        arguments:
+            - @template
+            - @dbal.conn
+            - %core.table_prefix%
+            - %core.root_path%
+        tags:
+            - { name: event.listener }
