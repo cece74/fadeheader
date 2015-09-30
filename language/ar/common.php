@@ -34,6 +34,5 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'COPIRIGHT'	=> 'الترويسة المتحركة بواسطة ',
-	'LINKNAME'	=> 'Microcosmo Acquari',
+	'COPYRIGHT'		=> 'الترويسة المتحركة بواسطة <a href="http://www.microcosmoacquari.it/">Microcosmo</a>',
 ));
